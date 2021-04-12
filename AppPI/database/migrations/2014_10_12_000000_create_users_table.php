@@ -14,13 +14,19 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+            
             $table->id();
-            $table->string('name');
+            $table->foreignId('gpsID');
+            $table->string('ime');
+            $table->string('prezime');
+            $table->string('mjesto_stanovanja');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('gpsID')->references('id')->on('g_p_s')->onDelete('cascade');
         });
     }
 
