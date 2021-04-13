@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('gpsID')->references('id')->on('g_p_s')->onDelete('cascade');
+            $table->foreign('gpsID')->references('id')->on('g_p_s')->onDelete('restrict');
         });
     }
 
