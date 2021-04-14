@@ -18,11 +18,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'ime',
+        'gpsID',
         'prezime',
-        'username',
-        'mjesto_stanovanja',
         'email',
-        'lozinka',
+        'password',
     ];
 
     /**

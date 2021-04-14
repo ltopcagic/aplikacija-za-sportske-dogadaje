@@ -16,10 +16,9 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             
             $table->id();
-            $table->foreignId('gpsID');
+            $table->foreignId('gpsID')->nullable();
             $table->string('ime');
             $table->string('prezime');
-            $table->string('mjesto_stanovanja');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
