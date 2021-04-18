@@ -82,4 +82,10 @@ class UsersOnDogadajController extends Controller
     {
         //
     }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+    public function dogadaj(){
+        return $this->hasMany(User::class);
+    }
 }

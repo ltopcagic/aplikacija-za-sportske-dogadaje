@@ -9,4 +9,7 @@ class GPS extends Model
 {
     protected $guarded=[];
     use HasFactory;
+    public function user(){
+        return $this->hasMany(User::class);
+    }
 }

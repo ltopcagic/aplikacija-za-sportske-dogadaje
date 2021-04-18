@@ -1,18 +1,19 @@
 @extends('layouts.app1')
 @section('content')
-    <form>
+    <form method="POST" action="/novidogadaj">
+        @csrf
+        <div class="form-group is-invalid" >
 
-        <div class="form-group is-invalid">
             <label for="naziv">Naziv događaja</label>
             <input type="text" class="form-control" id="naziv" placeholder="Naziv događaja" required>
             <div class="invalid-feedback">
-                Morate upisati naziv događaja.
+                Morate unijeti naziv dogadaja
             </div>
         </div>
 
         <div class="form-group is-invalid">
             <label for="opis">Opis događaja</label>
-            <textarea class="form-control" id="opis" rows="3" placeholder="Opis događaja"></textarea>
+            <textarea class="form-control" id="opis" rows="3" placeholder="Opis događaja" required></textarea>
             <div class="invalid-feedback">
                 Morate upisati opis događaja.
             </div>
@@ -20,7 +21,7 @@
 
         <div class="form-group is-invalid">
             <label for="datum">Datum odvijanja događaja</label>
-              <input class="form-control" type="date" value="0000-00-10" id="datum" required>
+              <input class="form-control" type="date" value=" " id="datum" required>
               <div class="invalid-feedback">
                 Morate unijeti ispravan datum.
             </div>
@@ -28,7 +29,7 @@
 
           <div class="form-group is-invalid">
             <label for="vrijeme_pocetka">Vrijeme početka događaja</label>
-              <input class="form-control" type="time" value="00:00:00" id="vrijeme_pocetka" required>
+              <input class="form-control" type="time" value=" " id="vrijeme_pocetka" required>
               <div class="invalid-feedback">
                 Morate unijeti vrijeme početka.
             </div>

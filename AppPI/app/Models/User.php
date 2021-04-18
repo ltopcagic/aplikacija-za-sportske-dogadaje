@@ -42,4 +42,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function GPS(){
+        return $this->belongsTo(User::class);
+    }
+    public function dogadaj(){
+        return $this->hasMany(Dogadaj::class);
+    }
+    public function users_on_dogadajs(){
+        return $this->hasMany(Users_on_dogadajs::class);
+    }
 }

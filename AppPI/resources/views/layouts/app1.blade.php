@@ -27,13 +27,13 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <!-- Ovdje ubacujemo elemente -->
-                <a class="navbar-brand" href='/proba/'>
+                <a class="navbar-brand" href='/dogadaji/'>
                     Lista sportskih događaja
                 </a>
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Moji događaji
                 </a>
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="/novidogadaj/create">
                     Kreiraj novi događaj
                 </a>
                 <a class="navbar-brand" href="{{ url('/') }}">

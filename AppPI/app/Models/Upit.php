@@ -9,4 +9,10 @@ class Upit extends Model
 {
     protected $guarded=[];
     use HasFactory;
+    public function user(){
+        return $this->belongTo(User::class);
+    }
+    public function dogadaj(){
+        return $this->belongsTo(Dogadaj::class);
+    }
 }

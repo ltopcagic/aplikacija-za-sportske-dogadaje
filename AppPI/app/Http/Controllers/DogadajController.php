@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dogadaj;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DogadajController extends Controller
 {
@@ -14,7 +15,7 @@ class DogadajController extends Controller
      */
     public function index()
     {
-        //
+        return view('dogadaji');
     }
 
     /**
@@ -24,7 +25,7 @@ class DogadajController extends Controller
      */
     public function create()
     {
-        //
+        return view('novidogadaj');
     }
 
     /**
@@ -35,7 +36,15 @@ class DogadajController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'naziv' => 'required',
+            'opis' => 'required',
+            'datum' => 'required',
+            'vrijeme_pocetka' => 'required',
+            'broj_ljudi' => 'required',
+        ]);
         Dogadaj::create([
+            'userID'=>Auth::user()->id,
             'naziv'=>$request->naziv,
             'opis'=>$request->opis,
             'datum'=>$request->datum,

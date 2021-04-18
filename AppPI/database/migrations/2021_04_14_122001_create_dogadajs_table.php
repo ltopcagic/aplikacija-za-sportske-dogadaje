@@ -15,6 +15,7 @@ class CreateDogadajsTable extends Migration
     {
         Schema::create('dogadajs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('userID');
             $table->string('naziv');
             $table->string('opis');
             $table->date('datum');
@@ -22,6 +23,8 @@ class CreateDogadajsTable extends Migration
             $table->integer('broj_ljudi');
             $table->string('potrebna_oprema');
             $table->timestamps();
+
+            $table->foreign('userID')->references('id')->on('users')->onDelete('restrict');
         });
     }
 

@@ -26,7 +26,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 //testiranje
 
-Route::get('/proba', [App\Http\Controllers\HomeController::class, 'proba']);
-Route::get('/novidogadaj', function () {
-    return view('novidogadaj');
-});
+Route::get('/dogadaji', [App\Http\Controllers\DogadajController::class, 'index']);
+Route::get('/novidogadaj/create', [App\Http\Controllers\DogadajController::class, 'create']);
+Route::post('/novidogadaj', [App\Http\Controllers\DogadajController::class, 'store']);
+
+
