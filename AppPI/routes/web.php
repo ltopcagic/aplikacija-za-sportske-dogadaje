@@ -21,5 +21,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/proba', [App\Http\Controllers\HomeController::class, 'proba'])->name('rutaproba');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+
+
+//testiranje
+
+Route::get('/proba', [App\Http\Controllers\HomeController::class, 'proba']);
+Route::get('/novidogadaj', function () {
+    return view('novidogadaj');
+});

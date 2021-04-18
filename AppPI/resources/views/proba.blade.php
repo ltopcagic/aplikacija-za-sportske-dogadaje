@@ -1,67 +1,166 @@
-@extends('layouts.app')
+@extends('layouts.app1')
+@section('headcss')
+<link href="{{ asset('css/table.css') }}" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+@endsection
+@section('headjs')
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/select2/select2.min.js"></script>
+<script src="js/main.js"></script>
+@endsection
 
 @section('content')
-<div class="container">
-        <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-          
-          <table class="table">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Maark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-</div>
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
+
+						<div class="row header">
+							<div class="cell">
+								Full Name
+							</div>
+							<div class="cell">
+								Age
+							</div>
+							<div class="cell">
+								Job Title
+							</div>
+							<div class="cell">
+								Location
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Age">
+								31
+							</div>
+							<div class="cell" data-title="Job Title">
+								iOS Developer
+							</div>
+							<div class="cell" data-title="Location">
+								Washington
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Joseph Smith
+							</div>
+							<div class="cell" data-title="Age">
+								27
+							</div>
+							<div class="cell" data-title="Job Title">
+								Project Manager
+							</div>
+							<div class="cell" data-title="Location">
+								Somerville, MA
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Justin Black
+							</div>
+							<div class="cell" data-title="Age">
+								26
+							</div>
+							<div class="cell" data-title="Job Title">
+								Front-End Developer
+							</div>
+							<div class="cell" data-title="Location">
+								Los Angeles
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Sean Guzman
+							</div>
+							<div class="cell" data-title="Age">
+								25
+							</div>
+							<div class="cell" data-title="Job Title">
+								Web Designer
+							</div>
+							<div class="cell" data-title="Location">
+								San Francisco
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Keith Carter
+							</div>
+							<div class="cell" data-title="Age">
+								20
+							</div>
+							<div class="cell" data-title="Job Title">
+								Graphic Designer
+							</div>
+							<div class="cell" data-title="Location">
+								New York, NY
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Austin Medina
+							</div>
+							<div class="cell" data-title="Age">
+								32
+							</div>
+							<div class="cell" data-title="Job Title">
+								Photographer
+							</div>
+							<div class="cell" data-title="Location">
+								New York
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Vincent Williamson
+							</div>
+							<div class="cell" data-title="Age">
+								31
+							</div>
+							<div class="cell" data-title="Job Title">
+								iOS Developer
+							</div>
+							<div class="cell" data-title="Location">
+								Washington
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								Joseph Smith
+							</div>
+							<div class="cell" data-title="Age">
+								27
+							</div>
+							<div class="cell" data-title="Job Title">
+								Project Manager
+							</div>
+							<div class="cell" data-title="Location">
+								Somerville, MA
+							</div>
+						</div>
+
+					</div>
+			</div>
+		</div>
+	</div>
 @endsection

@@ -35,7 +35,16 @@ class DogadajController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Dogadaj::create([
+            'naziv'=>$request->naziv,
+            'opis'=>$request->opis,
+            'datum'=>$request->datum,
+            'vrijeme_pocetka'=>$request->vrijeme_pocetka,
+            'broj_ljudi'=>$request->broj_ljudi,
+            'potrebna_oprema'=>$request->oprema,
+        ]);
+
+        return redirect('/dogadaji');
     }
 
     /**
