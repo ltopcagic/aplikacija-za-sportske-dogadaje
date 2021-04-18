@@ -21,7 +21,7 @@
 
         <div class="form-group is-invalid">
             <label for="datum">Datum odvijanja događaja</label>
-              <input class="form-control" type="date" value=" " id="datum" required>
+              <input class="form-control" type="date" value="YYYY-MM-DD" id="datum" required>
               <div class="invalid-feedback">
                 Morate unijeti ispravan datum.
             </div>
@@ -29,7 +29,7 @@
 
           <div class="form-group is-invalid">
             <label for="vrijeme_pocetka">Vrijeme početka događaja</label>
-              <input class="form-control" type="time" value=" " id="vrijeme_pocetka" required>
+              <input class="form-control" type="time" value="00:00:00" id="vrijeme_pocetka" required>
               <div class="invalid-feedback">
                 Morate unijeti vrijeme početka.
             </div>

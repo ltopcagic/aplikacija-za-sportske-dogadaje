@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Dogadaj;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,6 +44,12 @@ class DogadajController extends Controller
             'vrijeme_pocetka' => 'required',
             'broj_ljudi' => 'required',
         ]);
+        //$a=Carbon::createFromFormat('m-d-Y', $request->date)->format('d-m-Y');
+        //$b=Carbon::createFromFormat('hh:mm', $request->vrijeme_pocetka)->format('hh-mm-ss');
+        Carbon::parse($request->datum)->format('Y-m-d');
+        Carbon::parse($request->vrijeme_pocetka)->format('hh-mm-ss');
+        //$novidatum = Carbon::parse($request->date)->toDateString();
+        //novovrijeme = Carbon::parse($request->vrijeme_pocetka)->toTimeString();
         Dogadaj::create([
             'userID'=>Auth::user()->id,
             'naziv'=>$request->naziv,
