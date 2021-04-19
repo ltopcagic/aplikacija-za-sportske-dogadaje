@@ -16,7 +16,9 @@ class DogadajController extends Controller
      */
     public function index()
     {
-        $dogadaji=Dogadaj::all();
+        //dd(Dogadaj::notUsers()->get()); // Dogadaji koje user nije atendao
+        //dd(Auth::user()->dogadaj); User kreirani događaji
+        $dogadaji=Dogadaj::notUsers()->get();
         return view('dogadaji', compact('dogadaji'));
     }
 

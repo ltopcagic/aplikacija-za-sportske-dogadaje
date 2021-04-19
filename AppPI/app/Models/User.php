@@ -46,9 +46,10 @@ class User extends Authenticatable
         return $this->belongsTo(User::class);
     }
     public function dogadaj(){
-        return $this->hasMany(Dogadaj::class);
+        return $this->hasMany(Dogadaj::class,'userID','id');
     }
     public function users_on_dogadajs(){
         return $this->hasMany(Users_on_dogadajs::class);
     }
+
 }
