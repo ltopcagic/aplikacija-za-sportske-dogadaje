@@ -13,6 +13,23 @@
             <input type="text" class="form-control" id="opis" name="opis"placeholder="Opis događaja" required>
         </div>
 
+        <div class='form-group'>
+            <label for="grad">Izaberite grad:</label>
+            <select name="grad" id="grad" required>
+                <option value="Zagreb">Zagreb</option>
+                <option value="Karlovac">Karlovac</option>
+                <option value="Osijek">Osijek</option>
+                <option value="Slavonski Brod">Slavonski Brod</option>
+                <option value="Sisak">Sisak</option>
+                <option value="Zadar">Zadar</option>
+                <option value="Šibenik">Šibenik</option>
+                <option value="Split">Split</option>
+                <option value="Dubrovnik">Dubrovnik</option>
+                <option value="Rijeka">Rijeka</option>
+                <option value="Pula">Pula</option>
+            </select>
+        </div>
+
         <div class="form-group" >
             <label for="date">Datum</label>
             <input type="date" class="form-control" id="datum" name="datum" value="YYYY-MM-DD"required>

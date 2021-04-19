@@ -1,171 +1,59 @@
 @extends('layouts.app1')
 @section('headcss')
-<link href="{{ asset('css/table.css') }}" rel="stylesheet">
-<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
-<link rel="stylesheet" type="text/css" href="css/util.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
+
 @endsection
 @section('headjs')
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="vendor/select2/select2.min.js"></script>
-<script src="js/main.js"></script>
+
 @endsection
 
 @section('content')
 @isset($message)
     <div class="alert alert-success" role="alert">
-        {{ $message }} {{ $dogadaj->naziv }}
+        {{ $message }}
     </div>
 @endisset
-	<div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
-					<div class="table">
+<table class="table table-light">
+    <thead>
+        <th style="width: 14%">Naziv</th>
+        <th style="width: 20%">Opis</th>
+        <th style="width: 20%">Potrebna oprema</th>
+        <th style="width: 10%">Broj ljudi</th>
+        <th style="width: 12%">Grad</th>
+        <th style="width: 15%">Datum</th>
+        <th style="width: 13%">Vrijeme</th>
+        <th style="width: 8%"></th>
+    </thead>
+    <tbody>
+        @foreach ($dogadaji as $dogadaj)
+            <tr>
+                <td>
+                    {{ $dogadaj->naziv }}
+                </td>
+                <td>
+                    {{ $dogadaj->opis }}
+                </td>
+                <td>
+                    {{ $dogadaj->potrebna_oprema }}
+                </td>
+                <td>
+                    {{ $dogadaj->broj_ljudi }}
+                </td>
+                <td>
+                    {{ $dogadaj->grad }}
+                </td>
+                <td>
+                    {{ $dogadaj->datum }}
+                </td>
+                <td>
+                    {{ $dogadaj->vrijeme_pocetka }}
+                </td>
+                <td>
+                    <a href="" class="btn btn-primary">Prijavi dolazak</a>
+                </td>
 
-						<div class="row header">
-							<div class="cell">
-								Full Name
-							</div>
-							<div class="cell">
-								Age
-							</div>
-							<div class="cell">
-								Job Title
-							</div>
-							<div class="cell">
-								Location
-							</div>
-						</div>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
 
-						<div class="row">
-							<div class="cell" data-title="Full Name">
-								Vincent Williamson
-							</div>
-							<div class="cell" data-title="Age">
-								31
-							</div>
-							<div class="cell" data-title="Job Title">
-								iOS Developer
-							</div>
-							<div class="cell" data-title="Location">
-								Washington
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="cell" data-title="Full Name">
-								Joseph Smith
-							</div>
-							<div class="cell" data-title="Age">
-								27
-							</div>
-							<div class="cell" data-title="Job Title">
-								Project Manager
-							</div>
-							<div class="cell" data-title="Location">
-								Somerville, MA
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="cell" data-title="Full Name">
-								Justin Black
-							</div>
-							<div class="cell" data-title="Age">
-								26
-							</div>
-							<div class="cell" data-title="Job Title">
-								Front-End Developer
-							</div>
-							<div class="cell" data-title="Location">
-								Los Angeles
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="cell" data-title="Full Name">
-								Sean Guzman
-							</div>
-							<div class="cell" data-title="Age">
-								25
-							</div>
-							<div class="cell" data-title="Job Title">
-								Web Designer
-							</div>
-							<div class="cell" data-title="Location">
-								San Francisco
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="cell" data-title="Full Name">
-								Keith Carter
-							</div>
-							<div class="cell" data-title="Age">
-								20
-							</div>
-							<div class="cell" data-title="Job Title">
-								Graphic Designer
-							</div>
-							<div class="cell" data-title="Location">
-								New York, NY
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="cell" data-title="Full Name">
-								Austin Medina
-							</div>
-							<div class="cell" data-title="Age">
-								32
-							</div>
-							<div class="cell" data-title="Job Title">
-								Photographer
-							</div>
-							<div class="cell" data-title="Location">
-								New York
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="cell" data-title="Full Name">
-								Vincent Williamson
-							</div>
-							<div class="cell" data-title="Age">
-								31
-							</div>
-							<div class="cell" data-title="Job Title">
-								iOS Developer
-							</div>
-							<div class="cell" data-title="Location">
-								Washington
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="cell" data-title="Full Name">
-								Joseph Smith
-							</div>
-							<div class="cell" data-title="Age">
-								27
-							</div>
-							<div class="cell" data-title="Job Title">
-								Project Manager
-							</div>
-							<div class="cell" data-title="Location">
-								Somerville, MA
-							</div>
-						</div>
-
-					</div>
-			</div>
-		</div>
-	</div>
 @endsection

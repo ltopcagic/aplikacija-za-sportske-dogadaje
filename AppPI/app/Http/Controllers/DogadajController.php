@@ -16,7 +16,8 @@ class DogadajController extends Controller
      */
     public function index()
     {
-        return view('dogadaji');
+        $dogadaji=Dogadaj::all();
+        return view('dogadaji', compact('dogadaji'));
     }
 
     /**
@@ -42,6 +43,7 @@ class DogadajController extends Controller
             if($request->datum > $dateToday){
                 $request->validate([
                     'naziv' => 'min:4 | required ',
+                    'grad'=> 'required',
                     'opis' => 'min:5 | required',
                     'broj_ljudi' => 'required',
                     'vrijeme_pocetka' => 'required',
@@ -50,16 +52,18 @@ class DogadajController extends Controller
             }else{                                       //Radimo validaciju odnsono provjeru, ako je datum veci od danasnjeg onda normalno validiramo sve, a ako je datum danas onda gledamo da vrijeme mora biti vece od sadasnjeg
                 $request->validate([
                 'naziv' => 'min:4 | required ',
+                'grad'=> 'required',
                 'opis' => 'min:5 | required',
                 'broj_ljudi' => 'required',
                 'vrijeme_pocetka' => 'required | after:now',
                 'datum' => 'required | after:yesterday',
             ]);}
 
-            $dogadaj = Dogadaj::create([
+            Dogadaj::create([
                 'userID'=>Auth::user()->id,
                 'naziv'=>$request->naziv,
                 'opis'=>$request->opis,
+                'grad'=>$request->grad,
                 'datum'=>$request->datum,
                 'vrijeme_pocetka'=>$request->vrijeme_pocetka,
                 'broj_ljudi'=>$request->broj_ljudi,
@@ -67,6 +71,7 @@ class DogadajController extends Controller
             ]);
 
             $message="Successfuly Added";
+            $dogadaji=Dogadaj::all();
 
 
         //$a=Carbon::createFromFormat('m-d-Y', $request->date)->format('d-m-Y');
@@ -76,7 +81,7 @@ class DogadajController extends Controller
         //$novidatum = Carbon::parse($request->date)->toDateString();
         //novovrijeme = Carbon::parse($request->vrijeme_pocetka)->toTimeString();
 
-        return view('dogadaji', compact('message', 'dogadaj'));  //prosljedivanje poruke i novo kreiranog objekta u view
+        return view('dogadaji', compact('message', 'dogadaji'));  //prosljedivanje poruke i objekata dogadaji
         //return redirect('/dogadaji')->compact('message');
     }
 

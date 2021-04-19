@@ -19,6 +19,7 @@ class CreateDogadajsTable extends Migration
             $table->string('naziv');
             $table->string('opis');
             $table->date('datum');
+            $table->string('grad');
             $table->time('vrijeme_pocetka');
             $table->integer('broj_ljudi');
             $table->string('potrebna_oprema');

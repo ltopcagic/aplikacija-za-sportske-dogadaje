@@ -36,6 +36,9 @@
                 <a class="navbar-brand" href="/novidogadaj/create">
                     Kreiraj novi događaj
                 </a>
+                <a class="navbar-brand" href="/home">
+                    Prijavljeni događaji
+                </a>
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Inbox
                 </a>
