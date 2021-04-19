@@ -21,7 +21,7 @@
 
           <div class="form-group">
             <label for="vrijeme_pocetka">Vrijeme početka događaja</label>
-              <input class="form-control" type="time" name="vrijeme_pocetka" value="00:00:00" id="vrijeme_pocetka" required>
+              <input class="form-control" type="time" name="vrijeme_pocetka"  id="vrijeme_pocetka" required>
           </div>
 
         <div class="form-group">

@@ -56,7 +56,6 @@ class DogadajController extends Controller
                 'datum' => 'required',
             ]);}
 
-
             $dogadaj = Dogadaj::create([
                 'userID'=>Auth::user()->id,
                 'naziv'=>$request->naziv,
