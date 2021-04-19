@@ -37,7 +37,7 @@ class DogadajController extends Controller
      */
     public function store(Request $request)
     {
-            $dateToday = new Carbon(now());
+            $dateToday = new Carbon(now());  //korištenje Carbon extenzije za dohvacanje datuma i manipulacijom date-time tipovima podataka
 
             if($request->datum > $dateToday){
                 $request->validate([
@@ -47,13 +47,13 @@ class DogadajController extends Controller
                     'vrijeme_pocetka' => 'required',
                     'datum' => 'required | after:yesterday',
                 ]);
-            }else{
+            }else{                                       //Radimo validaciju odnsono provjeru, ako je datum veci od danasnjeg onda normalno validiramo sve, a ako je datum danas onda gledamo da vrijeme mora biti vece od sadasnjeg
                 $request->validate([
                 'naziv' => 'min:4 | required ',
                 'opis' => 'min:5 | required',
                 'broj_ljudi' => 'required',
                 'vrijeme_pocetka' => 'required | after:now',
-                'datum' => 'required',
+                'datum' => 'required | after:yesterday',
             ]);}
 
             $dogadaj = Dogadaj::create([
@@ -76,7 +76,7 @@ class DogadajController extends Controller
         //$novidatum = Carbon::parse($request->date)->toDateString();
         //novovrijeme = Carbon::parse($request->vrijeme_pocetka)->toTimeString();
 
-        return view('dogadaji', compact('message', 'dogadaj'));
+        return view('dogadaji', compact('message', 'dogadaj'));  //prosljedivanje poruke i novo kreiranog objekta u view
         //return redirect('/dogadaji')->compact('message');
     }
 
