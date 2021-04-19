@@ -1,53 +1,41 @@
 @extends('layouts.app1')
 @section('content')
+@include('layouts.errors')
     <form method="POST" action="/novidogadaj">
         @csrf
-        <div class="form-group is-invalid" >
-
+        <div class="form-group" >
             <label for="naziv">Naziv događaja</label>
-            <input type="text" class="form-control" id="naziv" placeholder="Naziv događaja" required>
-            <div class="invalid-feedback">
-                Morate unijeti naziv dogadaja
-            </div>
+            <input type="text" class="form-control" id="naziv" name="naziv"placeholder="Naziv događaja" required>
         </div>
 
-        <div class="form-group is-invalid">
-            <label for="opis">Opis događaja</label>
-            <textarea class="form-control" id="opis" rows="3" placeholder="Opis događaja" required></textarea>
-            <div class="invalid-feedback">
-                Morate upisati opis događaja.
-            </div>
+        <div class="form-group" >
+            <label for="opis">Naziv događaja</label>
+            <input type="text" class="form-control" id="opis" name="opis"placeholder="Opis događaja" required>
         </div>
 
-        <div class="form-group is-invalid">
-            <label for="datum">Datum odvijanja događaja</label>
-              <input class="form-control" type="date" value="YYYY-MM-DD" id="datum" required>
-              <div class="invalid-feedback">
-                Morate unijeti ispravan datum.
-            </div>
-          </div>
+        <div class="form-group" >
+            <label for="date">Datum</label>
+            <input type="date" class="form-control" id="datum" name="datum" value="YYYY-MM-DD"required>
+        </div>
 
-          <div class="form-group is-invalid">
+
+          <div class="form-group">
             <label for="vrijeme_pocetka">Vrijeme početka događaja</label>
-              <input class="form-control" type="time" value="00:00:00" id="vrijeme_pocetka" required>
-              <div class="invalid-feedback">
-                Morate unijeti vrijeme početka.
-            </div>
+              <input class="form-control" type="time" name="vrijeme_pocetka" value="00:00:00" id="vrijeme_pocetka" required>
           </div>
 
-        <div class="form-group is-invalid">
+        <div class="form-group">
             <label for="potrebna_oprema">Potrebna oprema</label>
-            <input type="text" class="form-control" id="potrebna_oprema">
+            <input type="text" class="form-control" id="potrebna_oprema" name="potrebna_oprema" required>
         </div>
 
-        <div class="form-group is-invalid">
+        <div class="form-group">
             <label for="broj_ljudi">Maksimalan broh ljudi na događaju</label>
-            <input type="number" class="form-control" value="0" id="broj_ljudi" required>
-            <div class="invalid-feedback">
-                Morate unijeti maksimalan broj ljudi.
-            </div>
+            <input type="number" class="form-control" value="0" id="broj_ljudi" name="broj_ljudi" required>
         </div>
 
         <button class="btn btn-primary" type="submit">Potvrdi unos</button>
+
+        @include('layouts.alerts')
     </form>
 @endsection

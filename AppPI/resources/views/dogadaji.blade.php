@@ -19,6 +19,11 @@
 @endsection
 
 @section('content')
+@isset($message)
+    <div class="alert alert-success" role="alert">
+        {{ $message }} {{ $dogadaj->naziv }}
+    </div>
+@endisset
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">

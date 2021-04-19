@@ -37,30 +37,48 @@ class DogadajController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'naziv' => 'required',
-            'opis' => 'required',
-            'datum' => 'required',
-            'vrijeme_pocetka' => 'required',
-            'broj_ljudi' => 'required',
-        ]);
+            $dateToday = new Carbon(now());
+
+            if($request->datum > $dateToday){
+                $request->validate([
+                    'naziv' => 'min:4 | required ',
+                    'opis' => 'min:5 | required',
+                    'broj_ljudi' => 'required',
+                    'vrijeme_pocetka' => 'required',
+                    'datum' => 'required | after:yesterday',
+                ]);
+            }else{
+                $request->validate([
+                'naziv' => 'min:4 | required ',
+                'opis' => 'min:5 | required',
+                'broj_ljudi' => 'required',
+                'vrijeme_pocetka' => 'required | after:now',
+                'datum' => 'required',
+            ]);}
+
+
+            $dogadaj = Dogadaj::create([
+                'userID'=>Auth::user()->id,
+                'naziv'=>$request->naziv,
+                'opis'=>$request->opis,
+                'datum'=>$request->datum,
+                'vrijeme_pocetka'=>$request->vrijeme_pocetka,
+                'broj_ljudi'=>$request->broj_ljudi,
+                'potrebna_oprema'=>$request->potrebna_oprema,
+            ]);
+
+            $message="Successfuly Added";
+
+
         //$a=Carbon::createFromFormat('m-d-Y', $request->date)->format('d-m-Y');
         //$b=Carbon::createFromFormat('hh:mm', $request->vrijeme_pocetka)->format('hh-mm-ss');
-        Carbon::parse($request->datum)->format('Y-m-d');
-        Carbon::parse($request->vrijeme_pocetka)->format('hh-mm-ss');
+        //$a =Carbon::parse($request->datum)->format('Y-m-d');
+        //$b = Carbon::parse($request->vrijeme_pocetka)->format('hh-mm-ss');
         //$novidatum = Carbon::parse($request->date)->toDateString();
         //novovrijeme = Carbon::parse($request->vrijeme_pocetka)->toTimeString();
-        Dogadaj::create([
-            'userID'=>Auth::user()->id,
-            'naziv'=>$request->naziv,
-            'opis'=>$request->opis,
-            'datum'=>$request->datum,
-            'vrijeme_pocetka'=>$request->vrijeme_pocetka,
-            'broj_ljudi'=>$request->broj_ljudi,
-            'potrebna_oprema'=>$request->oprema,
-        ]);
 
-        return redirect('/dogadaji');
+        return view('dogadaji', compact('message', 'dogadaj'));
+        //return redirect('/dogadaji')->compact('message');
     }
 
     /**
