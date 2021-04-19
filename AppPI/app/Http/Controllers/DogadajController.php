@@ -18,7 +18,7 @@ class DogadajController extends Controller
     {
         //dd(Dogadaj::notUsers()->get()); // Dogadaji koje user nije atendao
         //dd(Auth::user()->dogadaj); User kreirani događaji
-        $dogadaji=Dogadaj::notUsers()->get();
+        $dogadaji=Dogadaj::notUsers()->get();  //prikaz svih dogadaji koje user nije attendao
         return view('dogadaji', compact('dogadaji'));
     }
 
