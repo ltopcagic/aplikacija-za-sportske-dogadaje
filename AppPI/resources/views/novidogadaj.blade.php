@@ -9,7 +9,7 @@
         </div>
 
         <div class="form-group" >
-            <label for="opis">Naziv događaja</label>
+            <label for="opis">Opis događaja</label>
             <input type="text" class="form-control" id="opis" name="opis"placeholder="Opis događaja" required>
         </div>
 
