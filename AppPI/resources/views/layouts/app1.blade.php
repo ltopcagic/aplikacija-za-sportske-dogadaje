@@ -30,7 +30,7 @@
                 <a class="navbar-brand" href='/dogadaji/'>
                     Lista sportskih događaja
                 </a>
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href='/mojidogadaji'>
                     Moji događaji
                 </a>
                 <a class="navbar-brand" href="/novidogadaj/create">
