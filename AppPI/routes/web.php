@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Dogadaj;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Router;
@@ -30,5 +31,6 @@ Route::get('/dogadaji', [App\Http\Controllers\DogadajController::class, 'index']
 Route::get('/novidogadaj/create', [App\Http\Controllers\DogadajController::class, 'create']);
 Route::post('/novidogadaj', [App\Http\Controllers\DogadajController::class, 'store']);
 Route::get('/mojidogadaji', [App\Http\Controllers\DogadajController::class, 'moji_dogadaji']);
+Route::get('/mojidogadaji/{dogadaj}/izmjenadogadaja', [App\Http\Controllers\DogadajController::class, 'edit']);
 
 

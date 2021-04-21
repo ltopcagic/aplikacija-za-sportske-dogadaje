@@ -105,9 +105,10 @@ class DogadajController extends Controller
      * @param  \App\Models\Dogadaj  $dogadaj
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dogadaj $dogadaj)
+    public function edit($id)
     {
-        //
+        $dogadaj=Dogadaj::find($id);
+        return view('izmjenadogadaja', compact('dogadaj'));;
     }
 
     /**

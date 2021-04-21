@@ -8,24 +8,24 @@
 
         }
     </style>
-    <form method="POST" action="/novidogadaj">
+    <form method="POST" action="dogadaj/{{ $dogadaj->id }}">
         @csrf
+        @method('put')
         
-        
-        <h1 >Novi događaj</h1>
+        <h1 >Izmjena događaja</h1>
         <div class="form-group" >
             <label for="naziv">Naziv događaja:</label>
-            <input type="text" class="form-control" id="naziv" name="naziv"placeholder="Naziv događaja" required>
+            <input type="text" class="form-control" id="naziv" name="naziv"placeholder="Naziv događaja" required value="{{ $dogadaj->naziv }}">
         </div>
 
         <div class="form-group" >
             <label for="opis">Opis događaja:</label>
-            <input type="text" class="form-control" id="opis" name="opis"placeholder="Opis događaja" required>
+            <input type="text" class="form-control" id="opis" name="opis"placeholder="Opis događaja" required value="{{ $dogadaj->opis }}">
         </div>
 
         <div class='form-group'>
             <label for="grad">Izaberite grad:</label><br>
-            <select name="grad" id="grad" required style="font-size: 20px">
+            <select name="grad" id="grad" required style="font-size: 20px" value="{{ $dogadaj->grad }}">
                 <option value="Zagreb">Zagreb</option>
                 <option value="Karlovac">Karlovac</option>
                 <option value="Osijek">Osijek</option>
@@ -42,26 +42,26 @@
 
         <div class="form-group" >
             <label for="date">Datum:</label>
-            <input type="date" class="form-control" id="datum" name="datum" value="YYYY-MM-DD"required>
+            <input type="date" class="form-control" id="datum" name="datum" value="YYYY-MM-DD"required value="{{ $dogadaj->datum }}">
         </div>
 
 
           <div class="form-group">
             <label for="vrijeme_pocetka">Vrijeme početka događaja:</label>
-              <input class="form-control" type="time" name="vrijeme_pocetka"  id="vrijeme_pocetka" required>
+              <input class="form-control" type="time" name="vrijeme_pocetka"  id="vrijeme_pocetka" required value="{{ $dogadaj->vrijeme_pocetka }}">
           </div>
 
         <div class="form-group">
             <label for="potrebna_oprema">Potrebna oprema:</label>
-            <input type="text" class="form-control" id="potrebna_oprema" name="potrebna_oprema" required>
+            <input type="text" class="form-control" id="potrebna_oprema" name="potrebna_oprema" required value="{{ $dogadaj->potrebna_oprema }}">
         </div>
 
         <div class="form-group">
             <label for="broj_ljudi">Maksimalan broh ljudi na događaju:</label>
-            <input type="number" class="form-control" value="0" id="broj_ljudi" name="broj_ljudi" required>
+            <input type="number" class="form-control" value="0" id="broj_ljudi" name="broj_ljudi" required value="{{ $dogadaj->broj_ljudi }}">
         </div>
 
-        <button class="btn btn-primary" type="submit" style="margin-left: 7%">Potvrdi unos</button>
+        <button class="btn btn-primary" type="submit" style="margin-left: 7%">Potvrdi izmjenu</button>
 
         @include('layouts.alerts')
     </form>

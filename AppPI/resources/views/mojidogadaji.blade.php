@@ -55,7 +55,7 @@
                     {{ $dogadaj->vrijeme_pocetka }}
                 </td>
                 <td>
-                    <a href="" class="btn btn-primary">Izmjena</a>
+                    <a href="/mojidogadaji/{dogadaj}/izmjenadogadaja" class="btn btn-primary">Izmjena</a>
                 </td>
                 <td>
                     <a href="" class="btn btn-primary">Brisanje</a>
