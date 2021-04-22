@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Upit;
+use App\Models\Dogadaj;
 use Illuminate\Http\Request;
 
 class UpitController extends Controller
@@ -22,9 +23,10 @@ class UpitController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $dogadaj=Dogadaj::find($id);
+        return view('postaviupit', compact('dogadaj'));
     }
 
     /**

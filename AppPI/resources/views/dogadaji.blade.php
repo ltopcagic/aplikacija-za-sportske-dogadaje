@@ -50,6 +50,9 @@
                 <td>
                     <a href="" class="btn btn-primary">Prijavi dolazak</a>
                 </td>
+                <td>
+                    <a href="/postaviupit/{{$dogadaj->id}}" class="btn btn-primary">Postavi upit</a>
+                </td>
 
             </tr>
         @endforeach

@@ -108,7 +108,7 @@ class DogadajController extends Controller
     public function edit($id)
     {
         $dogadaj=Dogadaj::find($id);
-        return view('izmjenadogadaja', compact('dogadaj'));;
+        return view('izmjenadogadaja', compact('dogadaj'));
     }
 
     /**
