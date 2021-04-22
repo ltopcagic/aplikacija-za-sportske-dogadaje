@@ -18,10 +18,10 @@ class CreateUpitsTable extends Migration
             $table->foreignId('userID');
             $table->foreignId('dogadajID');
             $table->string('opis');
-            $table->string('odgovor');
+            $table->string('odgovor')->nullable();
             $table->timestamps();
 
-            
+
             $table->foreign('userID')->references('id')->on('users')->onDelete('restrict');
             $table->foreign('dogadajID')->references('id')->on('dogadajs')->onDelete('restrict');
         });

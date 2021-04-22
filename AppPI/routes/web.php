@@ -24,8 +24,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
-
-//testiranje
+//Dogadaji rute
 
 Route::get('/dogadaji', [App\Http\Controllers\DogadajController::class, 'index']);
 Route::get('/novidogadaj/create', [App\Http\Controllers\DogadajController::class, 'create']);
@@ -33,7 +32,10 @@ Route::post('/novidogadaj', [App\Http\Controllers\DogadajController::class, 'sto
 Route::get('/mojidogadaji', [App\Http\Controllers\DogadajController::class, 'moji_dogadaji']);
 Route::get('/mojidogadaji/{dogadaj}/izmjenadogadaja', [App\Http\Controllers\DogadajController::class, 'edit']);
 Route::put('/mojidogadaji/{dogadaj}/', [App\Http\Controllers\DogadajController::class, 'update']);
+
+//Upiti rute
 Route::get('/postaviupit/{dogadaj}/', [App\Http\Controllers\UpitController::class, 'create']);
+Route::post('/postaviupit/{dogadaj}/', [App\Http\Controllers\UpitController::class, 'store']);
 
 
 

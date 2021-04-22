@@ -6,7 +6,7 @@
             font-weight: 200;
 
         }
-    </style>       
+    </style>
 
         <h1 >Kreiranje upita</h1>
         <div class="form-group" >
@@ -38,13 +38,13 @@
             <label>Maksimalan broh ljudi na događaju: {{ $dogadaj->broj_ljudi }}</label>
         </div>
 
-        
 
-    <form method="POST" action="/postaviupit/">
+
+    <form method="POST" action="/postaviupit/{{ $dogadaj->id }}">
             @csrf
             <div class="form-group">
                 <label for="opis_upita">Upit:</label>
-                <textarea class="form-control" name="opis" id="opis" rows="3"></textarea><br>
+                <textarea class="form-control" name="opis" id="opis" rows="3" required></textarea><br>
                 <button class="btn btn-primary" type="submit" style="margin-left: 7%">Pošalji upit</button>
             </div>
     </form>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Upit;
 use App\Models\Dogadaj;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UpitController extends Controller
 {
@@ -35,9 +36,18 @@ class UpitController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $dogadaj=Dogadaj::find($id);
+        $request->validate([
+            'opis' => 'min:5 | required ',
+        ]);
+        Upit::create([
+            'userID'=>Auth::user()->id,
+            'dogadajID'=>$dogadaj->id,
+            'opis'=>$request->opis,
+        ]);
+        return redirect('/dogadaji');
     }
 
     /**
