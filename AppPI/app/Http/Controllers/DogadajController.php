@@ -120,7 +120,42 @@ class DogadajController extends Controller
      */
     public function update(Request $request, Dogadaj $dogadaj)
     {
-        //
+
+        $dateToday = new Carbon(now());  //korištenje Carbon extenzije za dohvacanje datuma i manipulacijom date-time tipovima podataka
+
+            if($request->datum > $dateToday){
+                $request->validate([
+                    'naziv' => 'min:4 | required ',
+                    'grad'=> 'required',
+                    'opis' => 'min:5 | required',
+                    'broj_ljudi' => 'required',
+                    'vrijeme_pocetka' => 'required',
+                    'datum' => 'required | after:yesterday',
+                ]);
+            }else{                                       //Radimo validaciju odnsono provjeru, ako je datum veci od danasnjeg onda normalno validiramo sve, a ako je datum danas onda gledamo da vrijeme mora biti vece od sadasnjeg
+                $request->validate([
+                'naziv' => 'min:4 | required ',
+                'grad'=> 'required',
+                'opis' => 'min:5 | required',
+                'broj_ljudi' => 'required',
+                'vrijeme_pocetka' => 'required | after:now',
+                'datum' => 'required | after:yesterday',
+            ]);}
+            $dogadaj->update([
+                'userID'=>Auth::user()->id,
+                'naziv'=>$request->naziv,
+                'opis'=>$request->opis,
+                'grad'=>$request->grad,
+                'datum'=>$request->datum,
+                'vrijeme_pocetka'=>$request->vrijeme_pocetka,
+                'broj_ljudi'=>$request->broj_ljudi,
+                'potrebna_oprema'=>$request->potrebna_oprema,
+            ]);
+
+            $message="Successfuly Edited";
+            $mojidogadaji=Auth::user()->dogadaj;
+
+        return view('mojidogadaji', compact('message', 'mojidogadaji'));
     }
 
     /**
@@ -135,7 +170,7 @@ class DogadajController extends Controller
     }
 
     public function moji_dogadaji(){
-        
+
         $mojidogadaji=Auth::user()->dogadaj;
         return view('mojidogadaji', compact('mojidogadaji'));
     }

@@ -32,5 +32,7 @@ Route::get('/novidogadaj/create', [App\Http\Controllers\DogadajController::class
 Route::post('/novidogadaj', [App\Http\Controllers\DogadajController::class, 'store']);
 Route::get('/mojidogadaji', [App\Http\Controllers\DogadajController::class, 'moji_dogadaji']);
 Route::get('/mojidogadaji/{dogadaj}/izmjenadogadaja', [App\Http\Controllers\DogadajController::class, 'edit']);
+Route::put('/mojidogadaji/{dogadaj}/', [App\Http\Controllers\DogadajController::class, 'update']);
+
 
 
