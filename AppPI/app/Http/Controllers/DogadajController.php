@@ -95,7 +95,8 @@ class DogadajController extends Controller
      */
     public function show(Dogadaj $dogadaj)
     {
-        //
+       /* $dogadaji=Dogadaj::Users()->get();
+        return view('mojidogadaji');*/
     }
 
     /**
@@ -104,9 +105,10 @@ class DogadajController extends Controller
      * @param  \App\Models\Dogadaj  $dogadaj
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dogadaj $dogadaj)
+    public function edit($id)
     {
-        //
+        $dogadaj=Dogadaj::find($id);
+        return view('izmjenadogadaja', compact('dogadaj'));;
     }
 
     /**
@@ -130,5 +132,11 @@ class DogadajController extends Controller
     public function destroy(Dogadaj $dogadaj)
     {
         //
+    }
+
+    public function moji_dogadaji(){
+        
+        $mojidogadaji=Auth::user()->dogadaj;
+        return view('mojidogadaji', compact('mojidogadaji'));
     }
 }
