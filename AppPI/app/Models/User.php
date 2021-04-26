@@ -49,7 +49,20 @@ class User extends Authenticatable
         return $this->hasMany(Dogadaj::class,'userID','id');
     }
     public function users_on_dogadajs(){
-        return $this->hasMany(Users_on_dogadajs::class);
+        return $this->hasMany(Users_on_dogadaj::class);
+    }
+    public function upit_poslani(){  //prikaz poslanih upita
+        return $this->hasMany(Upit::class,'userID','id');
+    }
+    public function upit_dolazni(){  //prikaz dolaznih upita
+        return $this->hasManyThrough(
+            Upit::class, //deployment
+            Dogadaj::class, //enviroment
+            'userID', // Foreign key on the environments table...
+            'dogadajID', // Foreign key on the deployments table...
+            'id', // Local key on the projects table...
+            'id' // Local key on the environments table...
+        );
     }
 
 }

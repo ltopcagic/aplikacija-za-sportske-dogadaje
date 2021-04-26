@@ -16,7 +16,9 @@ class UpitController extends Controller
      */
     public function index()
     {
-        //
+       // dd(Auth::user()->upit_poslani); kako prikazat poslane upite
+       // dd(Auth::user()->upit_dolazni()->bez_odgovora()->get()); - kako prikazat dolazne upite bez odgovora
+
     }
 
     /**

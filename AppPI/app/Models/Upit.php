@@ -15,4 +15,7 @@ class Upit extends Model
     public function dogadaj(){
         return $this->belongsTo(Dogadaj::class);
     }
+    public function scopebez_odgovora($query){  //prikaz dolaznih samo gdje nemamo odgovora!
+        return $query->whereNull('odgovor');
+    }
 }
