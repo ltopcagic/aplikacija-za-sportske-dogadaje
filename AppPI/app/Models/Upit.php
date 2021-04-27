@@ -12,8 +12,8 @@ class Upit extends Model
     public function user(){
         return $this->belongTo(User::class);
     }
-    public function scopedogadaj(){
-        return $this->belongsTo(Dogadaj::class);
+    public function dogadaj(){
+        return $this->belongsTo(Dogadaj::class,'id');
     }
     public function scopebez_odgovora($query){  //prikaz dolaznih samo gdje nemamo odgovora!
         return $query->whereNull('odgovor');

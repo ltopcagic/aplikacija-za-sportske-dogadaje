@@ -21,16 +21,16 @@
             @foreach ($upiti as $upit)
                 <tr>
                     <td>
-                        {{ $upit->dogadaj()->naziv }}
+                        {{ $upit->dogadaj->naziv }}
                     </td>
                     <td>
-                        {{ $upit->dogadaj()->opis }}
+                        {{ $upit->dogadaj->opis }}
                     </td>
                     <td>
-                        {{ $upit->dogadaj()->grad }}
+                        {{ $upit->dogadaj->grad }}
                     </td>
                     <td>
-                        {{ $upit->dogadaj()->datum }}
+                        {{ $upit->dogadaj->datum }}
                     </td>
                     <td>
                         {{ $upit->opis }}
