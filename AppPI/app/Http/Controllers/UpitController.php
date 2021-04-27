@@ -23,8 +23,8 @@ class UpitController extends Controller
     }
 
     public function poslani_upiti(){
-        $upiti=Auth::user()->upit_poslani();
-        return view('poslaniupiti');
+        $upiti=Auth::user()->upit_poslani()->get();
+        return view('poslaniupiti', compact('upiti'));
     }
 
     /**

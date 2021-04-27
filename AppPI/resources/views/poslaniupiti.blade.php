@@ -5,7 +5,7 @@
 @section('headjs')
 
 @endsection
-
+@section('content')
 <body>
     <table class="table table-light">
         <thead>
@@ -15,22 +15,22 @@
             <th style="width: 10%">Datum</th>
             <th style="width: 12%">Moj upit</th>
             <th style="width: 15%">Odgovor</th>
-          
+
         </thead>
         <tbody>
             @foreach ($upiti as $upit)
                 <tr>
                     <td>
-                        {{ $upit->dogadajID->naziv }}
+                        {{ $upit->dogadaj()->naziv }}
                     </td>
                     <td>
-                        {{ $upit->dogadajID->opis }}
+                        {{ $upit->dogadaj()->opis }}
                     </td>
                     <td>
-                        {{ $upit->dogadajID->grad }}
+                        {{ $upit->dogadaj()->grad }}
                     </td>
                     <td>
-                        {{ $upit->dogadajID->datum }}
+                        {{ $upit->dogadaj()->datum }}
                     </td>
                     <td>
                         {{ $upit->opis }}
@@ -43,3 +43,4 @@
         </tbody>
     </table>
 </body>
+@endsection
