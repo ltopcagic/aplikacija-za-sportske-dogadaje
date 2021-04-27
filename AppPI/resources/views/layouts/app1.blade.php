@@ -45,7 +45,7 @@
                 <a class="navbar-brand" href="/home">
                     Prijavljeni događaji
                 </a>
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/poslaniupiti') }}">
                     Poslani upiti
                 </a>
                 <a class="navbar-brand" href="{{ url('/') }}">

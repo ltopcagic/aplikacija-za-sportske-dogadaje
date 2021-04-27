@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Upit;
+use App\Models\User;
 use App\Models\Dogadaj;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,6 +20,11 @@ class UpitController extends Controller
        // dd(Auth::user()->upit_poslani); kako prikazat poslane upite
        // dd(Auth::user()->upit_dolazni()->bez_odgovora()->get()); - kako prikazat dolazne upite bez odgovora
 
+    }
+
+    public function poslani_upiti(){
+        $upiti=Auth::user()->upit_poslani();
+        return view('poslaniupiti');
     }
 
     /**

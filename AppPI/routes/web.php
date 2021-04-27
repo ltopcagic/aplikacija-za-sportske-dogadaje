@@ -37,6 +37,8 @@ Route::put('/mojidogadaji/{dogadaj}/', [App\Http\Controllers\DogadajController::
 Route::get('/postaviupit/{dogadaj}/', [App\Http\Controllers\UpitController::class, 'create']);
 Route::post('/postaviupit/{dogadaj}/', [App\Http\Controllers\UpitController::class, 'store']);
 Route::get('/proba', [App\Http\Controllers\UpitController::class, 'index']);
+Route::get('/poslaniupiti', [App\Http\Controllers\UpitController::class, 'poslani_upiti']);
+
 
 
 
