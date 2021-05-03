@@ -9,13 +9,19 @@
 
 <body>
 
-    <h1 >Dolazni upiti</h1>
     <table class="table table-light">
-        @foreach ($upiti as $upit)
             <thead>
-                <th>{{ $upit->dogadaj->naziv }}</th>
+                <th><h1 >Dolazni upiti</h1></th>
             </thead>
             <tbody>
+                @foreach ($upiti as $upit)
+                <tr>
+                    <td>
+                        <div class="form-group" >
+                            <label>Naziv događaja: {{ $upit->dogadaj->naziv }}</label>
+                        </div>
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <div class="form-group" >
@@ -46,19 +52,11 @@
                 </tr>
                 <tr>
                     <td>                   
-                        <form method="POST" action="/postaviupit/{{ $dogadaj->id }}">
-                        @csrf
-                        @method('put')
-                            <div class="form-group">
-                                <label for="opis_upita">Odgovor:</label>
-                                <textarea class="form-control" name="odgovor" id="odgovor" rows="3" required></textarea><br>
-                                <button class="btn btn-primary" type="submit" style="margin-left: 7%">Odgovori</button>
-                            </div>
-                         </form>
+                        <a href="/odgovor/{{$upit->id}}" class="btn btn-primary" style="margin-left: 7%">Odgovori</a>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
-        @endforeach
     </table>
 </body>
 @endsection
