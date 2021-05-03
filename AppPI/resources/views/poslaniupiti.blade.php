@@ -7,6 +7,7 @@
 @endsection
 @section('content')
 <body>
+    <h1>Poslani upiti</h1>
     <table class="table table-light">
         <thead>
             <th style="width: 14%">Događaj</th>

@@ -18,7 +18,7 @@
         </div>
 
         <div class='form-group'>
-            <label>Izaberite grad: {{ $dogadaj->grad }}</label>
+            <label>Grad: {{ $dogadaj->grad }}</label>
         </div>
 
         <div class="form-group" >

@@ -27,6 +27,10 @@ class UpitController extends Controller
         return view('poslaniupiti', compact('upiti'));
     }
 
+    public function dolazni_upiti(){
+        $upiti=Auth::user()->upit_dolazni()->bez_odgovora()->get();
+        return view('poslaniupiti', compact('upiti'));
+    }
     /**
      * Show the form for creating a new resource.
      *

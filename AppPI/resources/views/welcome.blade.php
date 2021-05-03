@@ -14,8 +14,8 @@
                 </div>
                 <p class="lead">
                     <div class="center">
-                        <a href="{{ route('login') }}" class="btn btn-lg btn-secondary razmak">Login </a>
-                        <a href="{{ route('register') }}" class="btn btn-lg btn-secondary">Register</a>
+                        <a href="{{ route('login') }}" class="btn btn-lg btn-secondary razmak">Prijava </a>
+                        <a href="{{ route('register') }}" class="btn btn-lg btn-secondary">Registracija</a>
                     </div>
                     
                 </p>

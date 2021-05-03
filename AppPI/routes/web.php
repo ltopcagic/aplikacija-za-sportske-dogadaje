@@ -40,6 +40,8 @@ Route::put('/mojidogadaji/{dogadaj}/', [App\Http\Controllers\DogadajController::
 Route::get('/postaviupit/{dogadaj}/', [App\Http\Controllers\UpitController::class, 'create']);
 Route::post('/postaviupit/{dogadaj}/', [App\Http\Controllers\UpitController::class, 'store']);
 Route::get('/poslaniupiti', [App\Http\Controllers\UpitController::class, 'poslani_upiti']);
+Route::get('/dolazniupiti', [App\Http\Controllers\UpitController::class, 'dolazni_upiti']);
+
 
 
 
