@@ -79,9 +79,10 @@ class UpitController extends Controller
      * @param  \App\Models\Upit  $upit
      * @return \Illuminate\Http\Response
      */
-    public function edit(Upit $upit)
+    public function edit($id)
     {
-        //
+        $upit=Upit::find($id);
+        return view('odgovor', compact('upit'));
     }
 
     /**
@@ -93,7 +94,12 @@ class UpitController extends Controller
      */
     public function update(Request $request, Upit $upit)
     {
-        //
+        $upit->update([
+            'odgovor'=>$request->odgovor,
+        ]);
+        $message="Successfuly Edited";
+        return view('dolazniupiti', compact('message'));
+        
     }
 
     /**

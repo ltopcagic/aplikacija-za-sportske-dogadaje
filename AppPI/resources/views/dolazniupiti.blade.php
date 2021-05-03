@@ -52,7 +52,7 @@
                 </tr>
                 <tr>
                     <td>                   
-                        <a href="/odgovor/{{$upit->id}}" class="btn btn-primary" style="margin-left: 7%">Odgovori</a>
+                        <a href="/dolazniupiti/{{$upit->id}}/odgovor" class="btn btn-primary" style="margin-left: 7%">Odgovori</a>
                     </td>
                 </tr>
                 @endforeach

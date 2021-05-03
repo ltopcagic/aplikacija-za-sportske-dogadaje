@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-group">
-            <label>Maksimalan broh ljudi na događaju: {{ $dogadaj->broj_ljudi }}</label>
+            <label>Maksimalan broj ljudi na događaju: {{ $dogadaj->broj_ljudi }}</label>
         </div>
 
 
@@ -45,7 +45,7 @@
             <div class="form-group">
                 <label for="opis_upita">Upit:</label>
                 <textarea class="form-control" name="opis" id="opis" rows="3" required></textarea><br>
-                <button class="btn btn-primary" type="submit" style="margin-left: 7%">Pošalji upit</button>
+                <button class="btn btn-primary" type="submit">Pošalji upit</button>
             </div>
     </form>
 @endsection

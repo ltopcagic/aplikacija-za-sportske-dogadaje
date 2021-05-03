@@ -41,6 +41,8 @@ Route::get('/postaviupit/{dogadaj}/', [App\Http\Controllers\UpitController::clas
 Route::post('/postaviupit/{dogadaj}/', [App\Http\Controllers\UpitController::class, 'store']);
 Route::get('/poslaniupiti', [App\Http\Controllers\UpitController::class, 'poslani_upiti']);
 Route::get('/dolazniupiti', [App\Http\Controllers\UpitController::class, 'dolazni_upiti']);
+Route::get('/dolazniupiti/{upit}/odgovor', [App\Http\Controllers\UpitController::class, 'edit']);
+Route::put('/dolazniupiti/{upit}/', [App\Http\Controllers\UpitController::class, 'update']);
 
 
 
