@@ -93,16 +93,10 @@ class UsersOnDogadajController extends Controller
     {
         //
     }
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
-    public function dogadaj(){
-        return $this->hasMany(User::class);
-    }
 
     public function prijavljeni_dogadaji(){
 
-        $prijavljenidogadaji=Auth::user()->users_on_dogadajs()->get();
+        $prijavljenidogadaji=Auth::user()->dogadaj;
         return view('prijavljenidogadaji', compact('prijavljenidogadaji'));
     }
 }

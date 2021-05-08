@@ -58,7 +58,10 @@
                     <a href="/mojidogadaji/{{ $dogadaj->id }}/izmjenadogadaja" class="btn btn-primary">Izmjena</a>
                 </td>
                 <td>
-                    <a href="" class="btn btn-primary">Brisanje</a>
+                    <form method="DELETE" action="/mojidogadaji/{{ $dogadaj->id }}">
+                        @csrf
+                        <button class="btn btn-primary" type="submit">Brisanje</button>
+                    </form>
                 </td>
 
             </tr>

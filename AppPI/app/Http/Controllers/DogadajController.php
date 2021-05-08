@@ -164,9 +164,11 @@ class DogadajController extends Controller
      * @param  \App\Models\Dogadaj  $dogadaj
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dogadaj $dogadaj)
+    public function destroy($id)
     {
-        //
+        $dogadaj=Dogadaj::find($id)->delete();
+        $message="Događaj je uspješno izbrisan!";
+        return view('mojidogadaji', compact('message','mojidogadaji'));
     }
 
     public function moji_dogadaji(){
