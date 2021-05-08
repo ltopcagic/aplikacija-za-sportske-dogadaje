@@ -5,6 +5,12 @@
 @section('headjs')
 
 @endsection
+<style>
+    div {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+</style>
 
 @section('content')
 @isset($message)
@@ -12,7 +18,6 @@
         {{ $message }}
     </div>
 @endisset
-
 <table class="table table-light">
     <thead>
         <th style="width: 14%">Naziv</th>
@@ -23,44 +28,39 @@
         <th style="width: 15%">Datum</th>
         <th style="width: 13%">Vrijeme</th>
         <th style="width: 8%"></th>
+        <th style="width: 8%"></th>
     </thead>
     <tbody>
-        @foreach ($dogadaji as $dogadaj)
+        @foreach ($prijavljenidogadaji as $dogadaj)
             <tr>
                 <td>
-                    {{ $dogadaj->naziv }}
+                    {{ $dogadaj->dogadaj->naziv }}
                 </td>
                 <td>
-                    {{ $dogadaj->opis }}
+                    {{ $dogadaj->dogadaj->opis }}
                 </td>
                 <td>
-                    {{ $dogadaj->potrebna_oprema }}
+                    {{ $dogadaj->dogadaj->potrebna_oprema }}
                 </td>
                 <td>
-                    {{ $dogadaj->broj_ljudi }}
+                    {{ $dogadaj->dogadaj->broj_ljudi }}
                 </td>
                 <td>
-                    {{ $dogadaj->grad }}
+                    {{ $dogadaj->dogadaj->grad }}
                 </td>
                 <td>
-                    {{ $dogadaj->datum }}
+                    {{ $dogadaj->dogadaj->datum }}
                 </td>
                 <td>
-                    {{ $dogadaj->vrijeme_pocetka }}
+                    {{ $dogadaj->dogadaj->vrijeme_pocetka }}
                 </td>
                 <td>
-                    <form method="POST" action="/dogadaji/{{ $dogadaj->id }}">
-                        @csrf
-                        <button class="btn btn-primary" type="submit">Prijavi dolazak</button>
-                    </form>
-                </td>
-                <td>
-                    <a href="/postaviupit/{{$dogadaj->id}}" class="btn btn-primary">Postavi upit</a>
+                    <a href="" class="btn btn-primary">Otkaži prijavu</a>
                 </td>
 
             </tr>
         @endforeach
     </tbody>
 </table>
-    
+
 @endsection

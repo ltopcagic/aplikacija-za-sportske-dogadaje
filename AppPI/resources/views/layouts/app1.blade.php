@@ -42,7 +42,7 @@
                 <a class="navbar-brand" href="/novidogadaj/create">
                     Kreiraj novi događaj
                 </a>
-                <a class="navbar-brand" href="/home">
+                <a class="navbar-brand" href="/prijavljenidogadaji">
                     Prijavljeni događaji
                 </a>
                 <a class="navbar-brand" href="{{ url('/poslaniupiti') }}">

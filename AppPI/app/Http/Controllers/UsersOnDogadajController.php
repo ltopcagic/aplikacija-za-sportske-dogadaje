@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Users_on_dogadaj;
+use App\Models\Dogadaj;
 use Illuminate\Http\Request;
+use App\Models\Users_on_dogadaj;
+use Illuminate\Support\Facades\Auth;
 
 class UsersOnDogadajController extends Controller
 {
@@ -33,9 +35,18 @@ class UsersOnDogadajController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id)
     {
-        //
+        $dogadaj=Dogadaj::find($id);
+        Users_on_dogadaj::create([
+            'userID'=>Auth::user()->id,
+            'dogadajID'=>$dogadaj->id,
+            ]);
+        
+        $message="Uspješno ste se prijavili na događaj!";
+        $dogadaji=Dogadaj::all();
+
+        return view('dogadaji',compact('message','dogadaji'));
     }
 
     /**
@@ -87,5 +98,11 @@ class UsersOnDogadajController extends Controller
     }
     public function dogadaj(){
         return $this->hasMany(User::class);
+    }
+
+    public function prijavljeni_dogadaji(){
+
+        $prijavljenidogadaji=Auth::user()->users_on_dogadajs()->get();
+        return view('prijavljenidogadaji', compact('prijavljenidogadaji'));
     }
 }
