@@ -21,7 +21,7 @@ class CreateUsersOnDogadajsTable extends Migration
 
 
             $table->foreign('userID')->references('id')->on('users')->onDelete('restrict');
-            $table->foreign('dogadajID')->references('id')->on('dogadajs')->onDelete('restrict');
+            $table->foreign('dogadajID')->references('id')->on('dogadajs')->onDelete('cascade');
         });
     }
 

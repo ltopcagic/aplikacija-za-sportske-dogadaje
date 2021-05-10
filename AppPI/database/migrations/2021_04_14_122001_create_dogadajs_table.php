@@ -25,7 +25,7 @@ class CreateDogadajsTable extends Migration
             $table->string('potrebna_oprema');
             $table->timestamps();
 
-            $table->foreign('userID')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('userID')->references('id')->on('users')->onDelete('restrict');
         });
     }
 
