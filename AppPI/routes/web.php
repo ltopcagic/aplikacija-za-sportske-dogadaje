@@ -35,7 +35,7 @@ Route::post('/novidogadaj', [App\Http\Controllers\DogadajController::class, 'sto
 Route::get('/mojidogadaji', [App\Http\Controllers\DogadajController::class, 'moji_dogadaji']);
 Route::get('/mojidogadaji/{dogadaj}/izmjenadogadaja', [App\Http\Controllers\DogadajController::class, 'edit']);
 Route::put('/mojidogadaji/{dogadaj}/', [App\Http\Controllers\DogadajController::class, 'update']);
-Route::delete('/mojidogadaji/{dogadaj}/', [App\Http\Controllers\DogadajController::class, 'destroy']);
+Route::get('/mojidogadaji/{dogadaj}/', [App\Http\Controllers\DogadajController::class, 'destroy']);
 
 //Upiti rute
 Route::get('/postaviupit/{dogadaj}/', [App\Http\Controllers\UpitController::class, 'create']);

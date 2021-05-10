@@ -168,7 +168,7 @@ class DogadajController extends Controller
     {
         $dogadaj=Dogadaj::find($id)->delete();
         $message="Događaj je uspješno izbrisan!";
-        return view('mojidogadaji', compact('message','mojidogadaji'));
+        return redirect()->back();
     }
 
     public function moji_dogadaji(){
