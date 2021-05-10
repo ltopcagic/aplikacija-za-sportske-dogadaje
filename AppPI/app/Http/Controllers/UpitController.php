@@ -98,8 +98,7 @@ class UpitController extends Controller
         $upit->update([
             'odgovor'=>$request->odgovor,
         ]);
-        $message="Successfuly Edited";
-        return redirect('dolazniupiti', compact('message'));
+        return redirect('/dolazniupiti');
 
     }
 
