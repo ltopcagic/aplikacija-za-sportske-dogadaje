@@ -98,7 +98,7 @@ class UpitController extends Controller
         $upit->update([
             'odgovor'=>$request->odgovor,
         ]);
-        return redirect()->back();
+        return redirect('/dolazniupiti');
 
     }
 
