@@ -13,7 +13,7 @@ class Upit extends Model
         return $this->belongTo(User::class);
     }
     public function dogadaj(){
-        return $this->belongsTo(Dogadaj::class,'id');
+        return $this->belongsTo(Dogadaj::class,'dogadajID');
     }
     public function scopebez_odgovora($query){  //prikaz dolaznih samo gdje nemamo odgovora!
         return $query->whereNull('odgovor');

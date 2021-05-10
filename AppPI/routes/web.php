@@ -49,6 +49,7 @@ Route::put('/dolazniupiti/{upit}/', [App\Http\Controllers\UpitController::class,
 //Korisnici na događaju rute
 Route::get('/prijavljenidogadaji', [App\Http\Controllers\UsersOnDogadajController::class, 'prijavljeni_dogadaji']);
 Route::post('/dogadaji/{dogadaj}/', [App\Http\Controllers\UsersOnDogadajController::class, 'store']);
+Route::get('/prijavljenidogadi/delete/{dogadaj}', [App\Http\Controllers\UsersOnDogadajController::class, 'destroy']);
 
 
 

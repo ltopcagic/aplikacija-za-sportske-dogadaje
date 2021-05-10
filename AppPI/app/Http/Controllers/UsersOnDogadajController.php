@@ -37,16 +37,23 @@ class UsersOnDogadajController extends Controller
      */
     public function store($id)
     {
-        $dogadaj=Dogadaj::find($id);
-        Users_on_dogadaj::create([
-            'userID'=>Auth::user()->id,
-            'dogadajID'=>$dogadaj->id,
-            ]);
-        
-        $message="Uspješno ste se prijavili na događaj!";
-        $dogadaji=Dogadaj::all();
 
-        return view('dogadaji',compact('message','dogadaji'));
+        $dogadaj=Dogadaj::withCount('users_on_dogadajs')->find($id);
+        $brojPrijavljenihLjudi = $dogadaj->count_users_on_dogadaj;
+        $dogadaji=Dogadaj::notUsers()->notCreated()->get();
+        if($brojPrijavljenihLjudi>= $dogadaj->broj_ljudi){
+            $message="Ovaj događaj je popunjen";
+            return view('dogadaji', compact('message', 'dogadaji'));
+        }else{
+            $message="Uspješno ste prijavili događaj";
+            Users_on_dogadaj::create([
+                'userID'=>Auth::user()->id,
+                'dogadajID'=>$dogadaj->id,
+                ]);
+                $dogadaji=Dogadaj::notUsers()->notCreated()->get();
+                return view('dogadaji', compact('message', 'dogadaji'));
+        }
+
     }
 
     /**
@@ -89,14 +96,15 @@ class UsersOnDogadajController extends Controller
      * @param  \App\Models\Users_on_dogadaj  $users_on_dogadaj
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Users_on_dogadaj $users_on_dogadaj)
+    public function destroy(Dogadaj $dogadaj)
     {
-        //
+        $dogadaj->users_on_dogadajs()->where('userID', 'like', Auth::user()->id)->delete();
+        return redirect()->back();
     }
 
     public function prijavljeni_dogadaji(){
 
-        $prijavljenidogadaji=Auth::user()->dogadaj;
+        $prijavljenidogadaji=Dogadaj::attendUsers()->get();
         return view('prijavljenidogadaji', compact('prijavljenidogadaji'));
     }
 }

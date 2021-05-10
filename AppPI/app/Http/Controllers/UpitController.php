@@ -23,6 +23,7 @@ class UpitController extends Controller
     }
 
     public function poslani_upiti(){
+
         $upiti=Auth::user()->upit_poslani()->get();
         return view('poslaniupiti', compact('upiti'));
     }
@@ -98,8 +99,8 @@ class UpitController extends Controller
             'odgovor'=>$request->odgovor,
         ]);
         $message="Successfuly Edited";
-        return view('dolazniupiti', compact('message'));
-        
+        return redirect('dolazniupiti', compact('message'));
+
     }
 
     /**

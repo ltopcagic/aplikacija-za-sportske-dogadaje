@@ -18,7 +18,7 @@ class DogadajController extends Controller
     {
         //dd(Dogadaj::notUsers()->get()); // Dogadaji koje user nije atendao
         //dd(Auth::user()->dogadaj); User kreirani događaji
-        $dogadaji=Dogadaj::notUsers()->get();  //prikaz svih dogadaji koje user nije attendao
+        $dogadaji=Dogadaj::notUsers()->notCreated()->get();  //prikaz svih dogadaji koje user nije attendao
         return view('dogadaji', compact('dogadaji'));
     }
 
@@ -73,7 +73,7 @@ class DogadajController extends Controller
             ]);
 
             $message="Successfuly Added";
-            $dogadaji=Dogadaj::all();
+            $dogadaji=Dogadaj::notUsers()->notCreated()->get();
 
 
         //$a=Carbon::createFromFormat('m-d-Y', $request->date)->format('d-m-Y');

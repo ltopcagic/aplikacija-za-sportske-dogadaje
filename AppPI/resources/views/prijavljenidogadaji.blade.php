@@ -34,28 +34,28 @@
         @foreach ($prijavljenidogadaji as $dogadaj)
             <tr>
                 <td>
-                    {{ $dogadaj->dogadaj->naziv }}
+                    {{ $dogadaj->naziv }}
                 </td>
                 <td>
-                    {{ $dogadaj->dogadaj->opis }}
+                    {{ $dogadaj->opis }}
                 </td>
                 <td>
-                    {{ $dogadaj->dogadaj->potrebna_oprema }}
+                    {{ $dogadaj->potrebna_oprema }}
                 </td>
                 <td>
-                    {{ $dogadaj->dogadaj->broj_ljudi }}
+                    {{ $dogadaj->broj_ljudi }}
                 </td>
                 <td>
-                    {{ $dogadaj->dogadaj->grad }}
+                    {{ $dogadaj->grad }}
                 </td>
                 <td>
-                    {{ $dogadaj->dogadaj->datum }}
+                    {{ $dogadaj->datum }}
                 </td>
                 <td>
-                    {{ $dogadaj->dogadaj->vrijeme_pocetka }}
+                    {{ $dogadaj->vrijeme_pocetka }}
                 </td>
                 <td>
-                    <a href="" class="btn btn-primary">Otkaži prijavu</a>
+                    <a href="/prijavljenidogadi/delete/{{ $dogadaj->id }}" class="btn btn-primary">Otkaži prijavu</a>
                 </td>
 
             </tr>

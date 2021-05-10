@@ -13,6 +13,6 @@ class Users_on_dogadaj extends Model
         return $this->belongsTo(User::class);
     }
     public function dogadaj(){
-        return $this->belongsTo(Dogadaj::class);
+        return $this->belongsTo(Dogadaj::class,'dogadajID');
     }
 }

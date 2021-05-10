@@ -3,7 +3,9 @@
 
 @endsection
 @section('headjs')
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js" defer></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 @endsection
 
 @section('content')
@@ -13,7 +15,8 @@
     </div>
 @endisset
 
-<table class="table table-light">
+
+<table id= 'table' class="table table-light">
     <thead>
         <th style="width: 14%">Naziv</th>
         <th style="width: 20%">Opis</th>
@@ -23,6 +26,7 @@
         <th style="width: 15%">Datum</th>
         <th style="width: 13%">Vrijeme</th>
         <th style="width: 8%"></th>
+        <th></th>
     </thead>
     <tbody>
         @foreach ($dogadaji as $dogadaj)
@@ -62,5 +66,10 @@
         @endforeach
     </tbody>
 </table>
-    
+<script>
+    $(window).on("load", function () {
+            $('#table').DataTable();
+        });
+</script>
+
 @endsection

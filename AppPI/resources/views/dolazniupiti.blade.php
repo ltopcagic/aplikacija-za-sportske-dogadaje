@@ -30,14 +30,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>        
+                    <td>
                         <div class='form-group'>
                             <label>Grad: {{ $upit->dogadaj->grad }}</label>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>            
+                    <td>
                         <div class="form-group" >
                             <label>Datum: {{ $upit->dogadaj->datum }}</label>
                         </div>
@@ -51,7 +51,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>                   
+                    <td>
                         <a href="/dolazniupiti/{{$upit->id}}/odgovor" class="btn btn-primary" style="margin-left: 7%">Odgovori</a>
                     </td>
                 </tr>

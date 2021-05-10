@@ -26,6 +26,9 @@ class Dogadaj extends Model
             $query->where('userID', 'like', Auth::user()->id);
         });
     }
+    public function scopenotCreated($query){
+       return $query->where('userID','not like', Auth::user()->id );
+    }
     public function scopeattendUsers($query){
         return $query->whereHas('users_on_dogadajs', function($query){
             $query->where('userID', 'like', Auth::user()->id);
