@@ -57,7 +57,7 @@
         </div>
 
         <div class="form-group">
-            <label for="broj_ljudi">Maksimalan broh ljudi na događaju:</label>
+            <label for="broj_ljudi">Maksimalan broj ljudi na događaju:</label>
             <input type="number" class="form-control" value="0" id="broj_ljudi" name="broj_ljudi" required>
         </div>
 
