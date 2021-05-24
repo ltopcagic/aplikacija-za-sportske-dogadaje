@@ -39,7 +39,7 @@ class UsersOnDogadajController extends Controller
     {
 
         $dogadaj=Dogadaj::withCount('users_on_dogadajs')->find($id);
-        $brojPrijavljenihLjudi = $dogadaj->count_users_on_dogadaj;
+        $brojPrijavljenihLjudi = $dogadaj->users_on_dogadajs_count;
         $dogadaji=Dogadaj::notUsers()->notCreated()->get();
         if($brojPrijavljenihLjudi>= $dogadaj->broj_ljudi){
             $message="Ovaj događaj je popunjen";
