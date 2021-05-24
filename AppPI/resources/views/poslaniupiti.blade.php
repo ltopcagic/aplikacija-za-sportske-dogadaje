@@ -5,9 +5,10 @@
 @section('headjs')
 
 @endsection
+
 @section('content')
 <body>
-    <h1>Poslani upiti</h1>
+    <h1>Poslani upiti</h1><br>
     <table class="table table-light">
         <thead>
             <th style="width: 14%">Događaj</th>

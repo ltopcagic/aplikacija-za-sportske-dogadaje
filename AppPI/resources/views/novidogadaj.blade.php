@@ -12,7 +12,7 @@
         @csrf
         
         
-        <h1 >Novi događaj</h1>
+        <h1 >Novi događaj</h1><br>
         <div class="form-group" >
             <label for="naziv">Naziv događaja:</label>
             <input type="text" class="form-control" id="naziv" name="naziv"placeholder="Naziv događaja" required>

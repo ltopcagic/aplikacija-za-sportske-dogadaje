@@ -15,7 +15,7 @@
     </div>
 @endisset
 
-
+<h1 >Lista sportskih događaja</h1><br>
 <table id= 'table' class="table table-light">
     <thead>
         <th style="width: 14%">Naziv</th>

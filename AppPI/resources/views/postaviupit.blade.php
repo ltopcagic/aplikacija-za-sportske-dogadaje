@@ -2,13 +2,13 @@
 @section('content')
     <style>
         h1 {
-            margin-left: 7%;
+           
             font-weight: 200;
 
         }
     </style>
 
-        <h1 >Kreiranje upita</h1>
+        <h1 >Kreiranje upita</h1><br>
         <div class="form-group" >
             <label>Naziv događaja: {{ $dogadaj->naziv }}</label>
         </div>

@@ -1,18 +1,11 @@
 @extends('layouts.app1')
 @section('content')
-<style>
-    h1 {
-        margin-left: 7%;
-        font-weight: 200;
-    }
-</style>
+
 
 <body>
+    <h1 >Dolazni upiti</h1><br>
 
     <table class="table table-light">
-            <thead>
-                <th><h1 >Dolazni upiti</h1></th>
-            </thead>
             <tbody>
                 @foreach ($upiti as $upit)
                 <tr>
@@ -52,7 +45,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <a href="/dolazniupiti/{{$upit->id}}/odgovor" class="btn btn-primary" style="margin-left: 7%">Odgovori</a>
+                        <a href="/dolazniupiti/{{$upit->id}}/odgovor" class="btn btn-primary" >Odgovori</a>
                     </td>
                 </tr>
                 @endforeach

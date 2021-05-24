@@ -10,6 +10,7 @@
         margin-left: 10%;
         margin-right: 10%;
     }
+    
 </style>
 
 @section('content')
@@ -18,15 +19,16 @@
         {{ $message }}
     </div>
 @endisset
+<h1>Prijavljeni događaji</h1><br>
 <table class="table table-light">
     <thead>
-        <th style="width: 14%">Naziv</th>
-        <th style="width: 20%">Opis</th>
-        <th style="width: 20%">Potrebna oprema</th>
+        <th style="width: 10%">Naziv</th>
+        <th style="width: 10%">Opis</th>
+        <th style="width: 10%">Potrebna oprema</th>
         <th style="width: 10%">Broj ljudi</th>
-        <th style="width: 12%">Grad</th>
-        <th style="width: 15%">Datum</th>
-        <th style="width: 13%">Vrijeme</th>
+        <th style="width: 10%">Grad</th>
+        <th style="width: 10%">Datum</th>
+        <th style="width: 10%">Vrijeme</th>
         <th style="width: 8%"></th>
         <th style="width: 8%"></th>
     </thead>
