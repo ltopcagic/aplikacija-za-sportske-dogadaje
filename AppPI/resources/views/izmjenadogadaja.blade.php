@@ -25,7 +25,7 @@
 
         <div class='form-group'>
             <label for="grad">Izaberite grad:</label><br>
-            <select name="grad" id="grad" required style="font-size: 20px">
+            <select name="grad" id="grad" required style="font-size: 20px" disabled>
                 <option value="{{ $dogadaj->grad }}">{{ $dogadaj->grad }}</option>
                 <option value="Zagreb">Zagreb</option>
                 <option value="Karlovac">Karlovac</option>
@@ -43,13 +43,13 @@
 
         <div class="form-group" >
             <label for="date">Datum:</label>
-            <input type="date" class="form-control" id="datum" name="datum" required value="{{ $dogadaj->datum }}">
+            <input type="date" class="form-control" id="datum" name="datum" required value="{{ $dogadaj->datum }}" disabled>
         </div>
 
 
           <div class="form-group">
             <label for="vrijeme_pocetka">Vrijeme početka događaja:</label>
-              <input class="form-control" type="time" name="vrijeme_pocetka"  id="vrijeme_pocetka" required value="{{ $dogadaj->vrijeme_pocetka }}">
+              <input class="form-control" type="time" name="vrijeme_pocetka"  id="vrijeme_pocetka" required value="{{ $dogadaj->vrijeme_pocetka }}" disabled>
           </div>
 
         <div class="form-group">
