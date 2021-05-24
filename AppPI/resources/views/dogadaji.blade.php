@@ -55,7 +55,7 @@
                 <td>
                     <form method="POST" action="/dogadaji/{{ $dogadaj->id }}">
                         @csrf
-                        <button class="btn btn-primary" type="submit">Prijavi dolazak</button>
+                        <button class="btn btn-primary" type="submit"  <?php if ($dogadaj->broj_ljudi == $dogadaj->users_on_dogadajs->count()){ ?> disabled <?php   } ?> >Prijavi dolazak</button>
                     </form>
                 </td>
                 <td>
