@@ -19,10 +19,10 @@ class RegistrationTest extends TestCase
         $response=$this->post('/register', [
             'ime'=>'KorisnikTestIme',
             'prezime'=>'KorisnikTestPrezime',
-            'email'=>'testmail@gmail.com',
+            'email'=>'test@gmail.com',
             'password'=>'lozinkatest',
             'password_confirmation'=>'lozinkatest',
         ]);
-        $response->assertStatus(302);
+        $response->assertRedirect('/home');
     }
 }

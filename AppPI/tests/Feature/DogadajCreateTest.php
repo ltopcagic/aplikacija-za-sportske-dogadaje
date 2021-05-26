@@ -22,12 +22,13 @@ class DogadajCreateTest extends TestCase
             'naziv'=>'TestniDogadaj',
             'opis'=>'TestniDogadajopis',
             'grad'=>'Pula',
-            'date'=>'2021-06-20',
+            'datum'=>'2021-06-20',
             'vrijeme_pocetka'=>'15:00:00',
             'potrebna_oprema'=>'testna oprema',
             'broj_ljudi'=>'10',
         ]);
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
+
     }
 }

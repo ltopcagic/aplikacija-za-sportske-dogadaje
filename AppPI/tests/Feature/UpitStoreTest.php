@@ -27,6 +27,6 @@ class UpitStoreTest extends TestCase
             
         ]);
 
-        $response->assertStatus(302);
+        $response->assertRedirect('/dogadaji');
     }
 }
