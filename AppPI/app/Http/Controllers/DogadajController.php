@@ -18,8 +18,7 @@ class DogadajController extends Controller
     {
         //dd(Dogadaj::notUsers()->get()); // Dogadaji koje user nije atendao
         //dd(Auth::user()->dogadaj); User kreirani događaji
-        Dogadaj::where('datum','<',Carbon::now())->delete();
-        $dogadaji=Dogadaj::notUsers()->notCreated()->get();  //prikaz svih dogadaji koje user nije attendao
+        $dogadaji=Dogadaj::where('datum','>',Carbon::now())->notUsers()->notCreated()->get();  //prikaz svih dogadaji koje user nije attendao
         return view('dogadaji', compact('dogadaji'));
     }
 
