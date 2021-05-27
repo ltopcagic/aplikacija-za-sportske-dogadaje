@@ -19,7 +19,7 @@ class FalseLoginTest extends TestCase
             'email'=>'ilucic1@veleri.hr',
             'password'=>'lozinka123',
         ]);
-        $response->assertSessionHasNoErrors();
+        $response->assertSessionHasErrors(['email']);
         
 
     }
