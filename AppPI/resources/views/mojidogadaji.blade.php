@@ -62,7 +62,7 @@
                 <td>
                     <form method="DELETE" action="/mojidogadaji/{{ $dogadaj->id }}">
                         @csrf
-                        <button class="btn btn-primary" type="submit">Brisanje</button>
+                        <button class="btn btn-primary" type="submit" <?php if ($dogadaj->users_on_dogadajs->count()>0){ ?> disabled <?php   } ?> >Brisanje</button>
                     </form>
                 </td>
 
