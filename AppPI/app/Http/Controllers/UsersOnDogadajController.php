@@ -16,6 +16,7 @@ class UsersOnDogadajController extends Controller
      */
     public function index()
     {
+        $user=Auth::user()->id;
         //
     }
 
